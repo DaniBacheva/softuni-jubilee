@@ -388,7 +388,7 @@
   </nav>
 
 
-  <?php if ( ! is_singular() ) : ?>
+  <?php if ( is_front_page() ) : ?>
   <section id="hero" style="background-image:url(images/billboard-bg.png); background-repeat: no-repeat; ">
 
     <div class="container">
@@ -415,9 +415,7 @@
     </div>
   
   </section>
-  <?php endif; ?>
-
-  <?php if ( ! is_singular() ) : ?>
+ 
   <section id="features">
     <div class="feature-box container">
       <div class="row ">
