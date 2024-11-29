@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Homepage
+ * Template Name: Services
  */
 ?>
 
@@ -10,15 +10,6 @@
 <?php
 	get_template_part( 'partials/about', 'section' );
 ?>
-
- 
-<?php
-	get_template_part( 'partials/category', 'section' );
-?>
-
-
-<?php softuni_display_courses( 4 ); ?> 
-
 
 <?php
 	get_template_part( 'partials/testimonial', 'section' );
