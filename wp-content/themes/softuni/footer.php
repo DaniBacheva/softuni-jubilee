@@ -133,7 +133,7 @@
     <div class="container">
       <div class="row py-3">
         <div class="col-md-6 copyright">
-          <p>© 2024 TemplatesJungle. All rights reserved.</p>
+          <p>© <?php echo date( 'Y' ) ?> TemplatesJungle. All rights reserved.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <p>Free HTML Template by: <a href="https://templatesjungle.com/" target="_blank" class="fw-bold">

@@ -21,10 +21,10 @@
                     <div class="card rounded-4 border-0 shadow-sm p-3 position-relative">
 
                         <?php if ( has_post_thumbnail() ): ?>
-                         <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid rounded-3', 'title' => 'Feature image'] ); ?>   
-                
+                             <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid rounded-3', 'title' => 'Feature image'] ); ?>   
+                        <?php endif; ?> 
                     </div>
-                    <?php endif; ?> 
+                    
 
                       <div class="card-body p-0">
 

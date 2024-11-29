@@ -194,7 +194,7 @@
   <nav class="main-menu d-flex navbar navbar-expand-lg p-2 py-3 p-lg-4 py-lg-4 ">
     <div class="container-fluid">
       <div class="main-logo d-lg-none">
-        <a href="index.html">
+        <a href="<?php echo get_home_url( '/' ); ?>">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="logo" class="img-fluid">
         </a>
       </div>
@@ -212,14 +212,14 @@
 
         <div class="offcanvas-body justify-content-between">
           <div class="main-logo">
-            <a href="index.html">
+            <a href="<?php echo get_home_url( '/' ); ?>">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="logo" class="img-fluid">
             </a>
           </div>
 
           <ul class="navbar-nav menu-list list-unstyled align-items-lg-center d-flex gap-md-3 mb-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link mx-2 active">Home</a>
+              <a href="<?php echo get_home_url( '/' ); ?>" class="nav-link mx-2 active">Home</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -387,7 +387,10 @@
     </div>
   </nav>
 
+
+  <?php if ( ! is_singular() ) : ?>
   <section id="hero" style="background-image:url(images/billboard-bg.png); background-repeat: no-repeat; ">
+
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 pe-5 mt-5 mt-md-0">
@@ -410,4 +413,52 @@
         </div>
       </div>
     </div>
+  
   </section>
+  <?php endif; ?>
+
+  <?php if ( ! is_singular() ) : ?>
+  <section id="features">
+    <div class="feature-box container">
+      <div class="row ">
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+          <div class="feature-item py-5  rounded-4">
+            <div class="feature-detail text-center">
+              <h2 class="feature-title">100+</h2>
+              <h6 class="feature-info text-uppercase">instructors</h6>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+          <div class="feature-item py-5  rounded-4">
+            <div class="feature-detail text-center">
+              <h2 class="feature-title">500+</h2>
+              <h6 class="feature-info text-uppercase">courses</h6>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+          <div class="feature-item py-5  rounded-4">
+            <div class="feature-detail text-center">
+              <h2 class="feature-title">free</h2>
+              <h6 class="feature-info text-uppercase">certifications</h6>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+          <div class="feature-item py-5  rounded-4">
+            <div class="feature-detail text-center">
+              <h2 class="feature-title">2,000+</h2>
+              <h6 class="feature-info text-uppercase">happy members</h6>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
