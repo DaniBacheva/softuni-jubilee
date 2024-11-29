@@ -9,4 +9,5 @@
 
  //echo 'Hello from my plugin';
 
- 
+ require 'includes/cpt-subject.php';
+
