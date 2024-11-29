@@ -3,7 +3,7 @@
 $courses_args = array(
     'post_type'       => 'post',
     'post_status'     => 'publish',
-    'posts_per_page'   => 4,
+    'posts_per_page'   => $number_of_posts,
 );
 
 $courses_query = new WP_Query ( $courses_args );

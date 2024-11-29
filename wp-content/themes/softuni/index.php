@@ -164,7 +164,7 @@
     </div>
   </section>
 
-  <?php include 'courses.php'; ?>;  
+  <?php softuni_display_courses( 4 ); ?> 
 
   <section id="testimonial" class="padding-medium bg-primary-subtle">
     <div class="container">
