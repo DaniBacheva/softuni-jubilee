@@ -83,3 +83,73 @@ function softuni_register_subject_category_taxonomy() {
     register_taxonomy( 'subject-category', 'subject', $args );
 }
 add_action( 'init', 'softuni_register_subject_category_taxonomy' );
+
+
+/**
+* Explanation
+* Metabox Registration: The add_meta_box function creates a metabox for the your_custom_post_type post type.
+* Metabox Display: The callback function renders a text input field for entering "Custom Text."
+* Data Saving: The save_post action saves the text entered in the metabox when the post is saved.
+* Gutenberg Compatibility: Registering the meta field with show_in_rest => true makes it accessible in the REST API, which is useful for integrating with the block editor.
+* This setup ensures that your metabox is compatible with both the Classic Editor and Gutenberg. Let me know if you'd like to expand this with specific Gutenberg integrations or additional fields! 
+ */
+ /**
+ * Subject Metabox main function where we'll register metaboxes
+ *
+ * @return void
+ */
+function subject_details_metabox() {
+    add_meta_box(
+        'subject_details_metabox_id',       	// Unique ID for the metabox
+        'Subject Details',                  	// Title of the metabox
+        'subject_details_metabox_callback', 	// Callback function that renders the metabox
+        'subject',        					// Post type where it will appear
+        'side',                         		// Context: where on the screen (side, normal, or advanced)
+        'default',                       		// Priority: default, high, low
+		array(
+			'__block_editor_compatible_meta_box' => true,
+			'__back_compat_meta_box'             => false,
+		)
+    );
+}
+add_action( 'add_meta_boxes', 'subject_details_metabox' );
+
+/**
+ * Shows the mark up of the metabox field
+ */
+
+function subject_details_metabox_callback( $post ) {
+    // Add a nonce field for security
+    wp_nonce_field( 'subject_details_metabox_nonce_action', 'subject_details_metabox_nonce' );
+    $subject_hours = get_post_meta( $post->ID, 'subject_hours', true );
+    echo '<label for="subject_hours">Learning Hours: </label>';
+    echo '<input type="text" id="subject_hours" name="subject_hours" value="' . esc_attr( $subject_hours ) . '" style="width: 100%;" />';
+}
+
+/**
+ * Function that is triggered when the save button is clicked
+ */
+
+function your_custom_save_metabox( $post_id ) {
+    // Check for nonce security
+    if ( ! isset( $_POST['subject_details_metabox_nonce'] ) ||
+         ! wp_verify_nonce( $_POST['subject_details_metabox_nonce'], 'subject_details_metabox_nonce_action' ) ) {
+        return;
+    }
+    // Check for autosave or bulk edit
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    // Check user permissions
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+	if ( isset( $_POST['_inline_edit'] ) ) {
+		return;
+	}
+    if ( isset( $_POST['subject_hours'] ) ) {
+        update_post_meta( $post_id, 'subject_hours', sanitize_text_field( $_POST['subject_hours'] ) );
+    }
+}
+
+add_action( 'save_post', 'your_custom_save_metabox' );
