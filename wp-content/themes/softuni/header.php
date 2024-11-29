@@ -217,7 +217,21 @@
             </a>
           </div>
 
-          <ul class="navbar-nav menu-list list-unstyled align-items-lg-center d-flex gap-md-3 mb-0">
+          <?php
+			/* WORDPRESS */
+        
+            $nav_menu_args = array(
+				'menu'				=> 'primary-menu', // (int|string|WP_Term) Desired menu. Accepts a menu ID, slug, name, or object.
+				'menu_class'		=> 'navbar-nav menu-list list-unstyled align-items-lg-center d-flex gap-md-3 mb-0', // (string) CSS class to use for the ul element which forms the menu. Default 'menu'.
+				'container'			=> 'ul', // (string) Whether to wrap the ul, and what to wrap it with. Default 'div'.
+				'container_class'	=> 'container-class', // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+				'theme_location'	=> 'primary', // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+			);
+
+			wp_nav_menu( $nav_menu_args );
+			?>
+
+          <!-- <ul class="navbar-nav menu-list list-unstyled align-items-lg-center d-flex gap-md-3 mb-0">
             <li class="nav-item">
               <a href="<?php echo get_home_url( '/' ); ?>" class="nav-link mx-2 active">Home</a>
             </li>
@@ -304,7 +318,7 @@
               <a href="https://templatesjungle.gumroad.com/l/jubilee-free-bootstrap-5-html-website-template-for-online-course"
                 class="nav-link mx-2 text-decoration-underline" target="_blank">GET PRO</a>
             </li>
-          </ul>
+          </ul> -->
 
           <div class="d-none d-lg-flex align-items-center">
             <ul class="d-flex  align-items-center list-unstyled m-0">

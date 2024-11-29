@@ -12,7 +12,7 @@
 
             <?php if( have_posts() ) : ?>
 
-                <div class="col-sm-6 col-lg-4 col-xl-3 mb-5">
+                <div id="post-id-<?php the_ID() ?>" <?php post_class( 'col-sm-6 col-lg-4 col-xl-3 mb-5' ) ?>>
 
                     <?php while( have_posts() ) : the_post(); ?>
 
