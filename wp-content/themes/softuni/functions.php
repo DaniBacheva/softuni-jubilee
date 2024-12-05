@@ -1,12 +1,36 @@
 <?php
 
+if ( ! defined( 'SOFTUNI_VER' ) ) {
+	define( 'SOFTUNI_VER', '1.0.0' );
+}
+
+
 add_theme_support ( 'post-thumbnails' );
 add_theme_support ( 'title-tag' );
 add_post_type_support( 'excerpt', array() );
 
+
+add_action( 'wp_enqueue_scripts', 'softuni_enqueue_assets' );
+
 function softuni_enqueue_assets() {
-    
+
+    // Vendor CSS Files
+  wp_enqueue_style( 'vendor-jubilee', get_stylesheet_directory_uri() . '/css/vendor.css', array(), SOFTUNI_VER );
+  wp_enqueue_style( 'icomoon-jubilee', get_stylesheet_directory_uri() . '/css/icomoon/.css', array(), SOFTUNI_VER );
+  
+    // Load all CSS files
+	wp_enqueue_style( 'softuni-jubilee-style', get_stylesheet_directory_uri() . '/style.css', array(), SOFTUNI_VER );
+
+    // Load all JavaScript files
+  wp_enqueue_script( 'jquery', get_stylesheet_directory_uri() . '/js/jquery-1.11.0.min.js', array( 'jquery' ), SOFTUNI_VER, array( 'in_footer' => true ) );
+  wp_enqueue_script( 'plugins-js', get_stylesheet_directory_uri() . '/js/plugins.js', array( 'jquery' ), SOFTUNI_VER, array( 'in_footer' => true ) );
+  wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js', array( 'jquery' ), SOFTUNI_VER, array( 'in_footer' => true ) );
+   
 }
+
+
+
+
 
 
 function softuni_display_courses( $number_of_posts=3 ){

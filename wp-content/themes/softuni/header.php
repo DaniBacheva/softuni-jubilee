@@ -2,8 +2,8 @@
 <html class="no-js" <?php language_attributes(); ?>>
 
 <head>
-  <title>Jubilee - Free Online Course HTML Website Template</title>
-  <meta charset="utf-8">
+  <title><?php the_title(); ?></title>
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
@@ -15,13 +15,13 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/icomoon/icomoon.css">
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/icomoon/icomoon.css"> -->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="css/vendor.css">
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/vendor.css"> -->
+<!-- //<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css"> -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
