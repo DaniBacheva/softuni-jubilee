@@ -321,6 +321,7 @@
             </div>
           </div>
         </div>
+
         <div class="col mb-5">
           <div class="team-member position-relative card rounded-4 border-0 shadow-sm p-3">
             <div class="image-holder zoom-effect rounded-3">
@@ -496,6 +497,7 @@
             </div>
           </div>
         </div>
+        
       </div>
   </section>
 

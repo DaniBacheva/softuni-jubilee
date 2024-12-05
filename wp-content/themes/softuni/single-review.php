@@ -1,29 +1,61 @@
 <?php get_header(); ?>
 
-<section id="about" class="padding-medium mt-xl-5">
+<section id="testimonial" class="padding-medium bg-primary-subtle">
     <div class="container">
-        <div class="row align-items-center mt-xl-5">
+      <div class="text-center mb-4">
+        <p class="text-secondary ">What our students say about us</p>
+        <h2 class="display-6 fw-semibold">Reviews</h2>
+      </div>
+      <div class="row">
 
-           <?php if ( has_post_thumbnail() ): ?>
-            <div class="offset-md-1 col-md-10">
+      <?php if( have_posts() ) : ?>
 
-                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-circle', 'title' => 'Feature image']); ?>
-            
+        <div class="offset-md-1 col-md-10">
+
+        <?php while( have_posts() ) : the_post(); ?>
+
+          <div class="swiper testimonial-swiper">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide pe-md-5">
+                <div class="my-4">
+                  <p class="text-muted"><?php the_content(); ?></p>
+                  <div class="row">
+
+                  <?php if ( has_post_thumbnail() ): ?>
+
+                    <div class="col-3"> <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-circle', 'title' => 'Feature image']); ?>
+                    </div>
+
+                    <?php endif; ?>   
+                    <div class="col-9">
+                      <h5 class="m-0 mt-2">Recco Gracia</h5>
+                      <p class="text-muted">Web Developer</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              
+
             </div>
-           <?php endif; ?>        
-         <div class="col-md-10 mt-5 mt-md-0">
-            <div class="mb-3">
-                
-                <h2 class="display-6 fw-semibold"><?php echo get_the_title(); ?></h2>
-            </div>
-              <?php the_content(); ?>
-     
-                  <a href="about.html" class="btn btn-primary px-5 py-3 mt-4">Learn more</a>
 
-           </div>
+            <div class="swiper-pagination"></div>
+
+          </div>
+
+          <?php endwhile; ?>
         </div>
+
+        <?php else : ?>
+				no have post
+		<?php endif; ?>	
+
+      </div>
     </div>
-</section>
+
+
+  </section>
 
 
 <?php get_footer(); ?>
