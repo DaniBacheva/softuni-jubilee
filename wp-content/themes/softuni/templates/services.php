@@ -11,9 +11,11 @@
 	get_template_part( 'partials/about', 'section' );
 ?>
 
-<?php
+<?php softuni_display_reviews(); ?> 
+
+<!-- <?php
 	get_template_part( 'partials/testimonial', 'section' );
-?>
+?> -->
  
  <?php
 	get_template_part( 'partials/teacher', 'section' );
