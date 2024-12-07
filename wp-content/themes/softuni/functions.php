@@ -28,7 +28,11 @@ function softuni_enqueue_assets() {
    
 }
 
+/*
+*Disable the suggestion of persistent object cache
+*/
 
+add_filter( 'site_status_should_suggest_persistent_object_cache', '__return_false' );
 
 
 
@@ -37,6 +41,13 @@ function softuni_display_courses( $number_of_posts=3 ){
     include 'courses.php'; 
 }
 
+function softuni_display_subjects( $number_of_cpt=3 ){
+  include 'subjects.php'; 
+}
+
+function softuni_display_reviews(){
+  include 'reviews.php'; 
+}
 
 /*
 Adding one more extra class to th ebody

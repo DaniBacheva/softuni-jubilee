@@ -1,61 +1,65 @@
-<?php get_header(); ?>
+<?php 
+
+$reviews_args = array(
+    'post_type'       => 'review',
+    'post_status'     => 'publish',
+    'posts_per_page'   => 3,
+);
+
+$reviews_query = new WP_Query ( $reviews_args );
+//var_dump( $reviews_query )
+?>
 
 <section id="testimonial" class="padding-medium bg-primary-subtle">
+    
     <div class="container">
+     
       <div class="text-center mb-4">
         <p class="text-secondary ">What our students say about us</p>
         <h2 class="display-6 fw-semibold">Reviews</h2>
       </div>
       <div class="row">
-
-      <?php if( have_posts() ) : ?>
-
+   <?php if ( $reviews_query-> have_posts() ) : ?>
+     
         <div class="offset-md-1 col-md-10">
-
-        <?php while( have_posts() ) : the_post(); ?>
-
+           
           <div class="swiper testimonial-swiper">
+                
             <div class="swiper-wrapper">
-
+  <?php while ( $reviews_query->have_posts() ) : $reviews_query->the_post(); ?>
               <div class="swiper-slide pe-md-5">
+
+                  
                 <div class="my-4">
+            
                   <p class="text-muted"><?php the_content(); ?></p>
                   <div class="row">
-
                   <?php if ( has_post_thumbnail() ): ?>
-
-                    <div class="col-3"> <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-circle', 'title' => 'Feature image']); ?>
-                    </div>
-
-                    <?php endif; ?>   
+                             <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid rounded-3', 'title' => 'Feature image'] ); ?>   
+                        <?php endif; ?> 
+                    <div class="col-3"> <img src="<?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid rounded-circle', 'title' => 'Feature image'] ); ?>
+                                        </div>
                     <div class="col-9">
                       <h5 class="m-0 mt-2"><?php the_title(); ?></h5>
-                      <!-- <p class="text-muted">Web Developer</p> -->
                     </div>
 
                   </div>
+                    
                 </div>
+                  
               </div>
-              
-
+ <?php endwhile;	?> 
             </div>
-
+ 
             <div class="swiper-pagination"></div>
 
           </div>
-
-          <?php endwhile; ?>
+     
         </div>
 
-        <?php else : ?>
-				no have post
-		<?php endif; ?>	
-
+        <?php endif; ?>
       </div>
     </div>
+   
 
-
-  </section>
-
-
-<?php get_footer(); ?>
+</section>

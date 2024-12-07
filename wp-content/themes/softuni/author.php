@@ -2,6 +2,7 @@
 
   <section id="courses" class="padding-medium">
     <div class="container">
+          <?php if( have_posts() ) : ?>
         <div class="text-center mb-5">
             <h2 class="display-6 fw-semibold">Explore Inspiring Online Courses</h2>
             <h3 class="text-secondary"><?php echo get_the_archive_title(); ?></h3>
@@ -10,8 +11,7 @@
 
         <div class="row">
 
-            <?php if( have_posts() ) : ?>
-
+          
                 <div id="post-id-<?php the_ID() ?>" <?php post_class( 'col-sm-6 col-lg-4 col-xl-3 mb-5' ) ?>>
 
                     <?php while( have_posts() ) : the_post(); ?>
@@ -61,12 +61,12 @@
 
                 </div>
 
-            <?php else : ?>
-				no have post
-		 	<?php endif; ?>	
 
         </div>
 
+            <?php else : ?>
+				no have post
+		 	<?php endif; ?>	
         <?php the_posts_pagination( array(
             'mid_size'  =>2,
             'prev_text' => __( 'Previous', 'softuni'),
@@ -75,7 +75,7 @@
         ?>
 
       <div class="text-center mt-4">
-        <a href="courses.html" class="btn btn-primary px-5 py-3">View all courses</a>
+        <a href="http://localhost/softuni/category/courses/" class="btn btn-primary px-5 py-3">View all courses</a>
       </div>
 
     </div>

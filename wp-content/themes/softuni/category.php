@@ -75,7 +75,7 @@
         ?>
 
       <div class="text-center mt-4">
-        <a href="courses.html" class="btn btn-primary px-5 py-3">View all courses</a>
+        <a href="http://localhost/softuni/courses/" class="btn btn-primary px-5 py-3">View all courses</a>
       </div>
 
     </div>
