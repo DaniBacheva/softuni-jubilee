@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<?php
+$id = get_the_ID();
+$review_job = get_field( 'job', $id );
+$review_age = get_field( 'age', $id );
+//var_dump( $review_age );
+?>
+
 <section id="testimonial" class="padding-medium bg-primary-subtle">
     <div class="container">
       <div class="text-center mb-4">
@@ -30,8 +37,16 @@
                     <?php endif; ?>   
                     <div class="col-9">
                       <h5 class="m-0 mt-2"><?php the_title(); ?></h5>
-                      <!-- <p class="text-muted">Web Developer</p> -->
-                    </div>
+
+                      <div class="col-9">
+                <?php if ( ! empty( $review_job ) ) : ?>
+                    <div><?php echo esc_attr( $review_job ) ?></div>
+                <?php endif; ?>
+                <?php if ( ! empty( $review_age )) : ?>
+                    <div><?php echo esc_attr( $review_age ) ?> years</div>
+                <?php endif; ?>
+            </div>  
+                                       </div>
 
                   </div>
                 </div>
