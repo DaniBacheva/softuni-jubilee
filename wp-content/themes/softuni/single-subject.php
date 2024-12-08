@@ -2,6 +2,7 @@
 
 <?php
 $subject_hours = get_post_meta( get_the_ID(), 'subject_hours', true );
+$subscribers_count = get_post_meta( get_the_ID(), 'subscribers', true );
 ?>
 
 <section id="about" class="padding-medium mt-xl-5">
@@ -11,7 +12,8 @@ $subject_hours = get_post_meta( get_the_ID(), 'subject_hours', true );
    <div class="mb-3">
                 <h2 class="display-6 fw-semibold"><?php echo get_the_title(); ?></h2>
             </div>
-            
+
+
            <?php if ( has_post_thumbnail() ): ?>
             <div class="offset-md-1 col-md-10">
 
@@ -33,9 +35,9 @@ $subject_hours = get_post_meta( get_the_ID(), 'subject_hours', true );
 					}
 					?>
                 </div>
-     
-                  <a href="about.html" class="btn btn-primary px-5 py-3 mt-4">Learn more</a>
-
+                                <a href="#" id="subject-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="subscribe btn btn-primary px-5 py-3 mt-4">Subscribe now!</a>
+                  <p><?php echo $subscribers_count ?> Subscribers </p>
+              
            </div>
         </div>
     </div>

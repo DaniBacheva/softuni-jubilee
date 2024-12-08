@@ -1,11 +1,11 @@
 <?php
 
-/*
+/** 
  * Plugin Name: Softuni
  * Author: Dani Nikolova    
  * Description : my plugin for the my project
  * Version: 0.1
- */
+*/ 
 
  //echo 'Hello from my plugin';
 
@@ -20,4 +20,5 @@ if ( ! defined( 'SOFTUNI_PLUGIN_ASSETS_URL' ) ) {
  require 'includes/cpt-review.php';
  require 'includes/cpt-teacher.php';
  require 'includes/options-page.php';
+ require 'includes/functions.php';
 
