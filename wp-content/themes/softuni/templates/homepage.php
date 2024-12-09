@@ -17,16 +17,14 @@
 <?php softuni_display_courses( 4 ); ?> 
 
 
-<?php softuni_display_reviews(); ?> 
+<?php softuni_display_reviews(); ?>
+ 
 
+<?php softuni_display_teachers(); ?>
 
 <!-- <?php
-	get_template_part( 'partials/testimonial', 'section' );
-?> -->
- 
- <?php
 	get_template_part( 'partials/teacher', 'section' );
-?>
+?> -->
 
 
 <?php
@@ -39,4 +37,4 @@
 ?>
 
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>

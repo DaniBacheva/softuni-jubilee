@@ -49,6 +49,10 @@ function softuni_display_reviews(){
   include 'reviews.php'; 
 }
 
+function softuni_display_teachers(){
+  include 'teachers.php'; 
+}
+
 /*
 Adding one more extra class to th ebody
 */

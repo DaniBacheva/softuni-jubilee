@@ -18,7 +18,7 @@ if ( ! defined( 'SOFTUNI_PLUGIN_ASSETS_URL' ) ) {
 
  require 'includes/cpt-subject.php';
  require 'includes/cpt-review.php';
- require 'includes/cpt-teacher.php';
+ 
  require 'includes/options-page.php';
  require 'includes/functions.php';
 
