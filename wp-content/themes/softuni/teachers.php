@@ -25,15 +25,18 @@ $teachers_query = new WP_Query ( $teachers_args );
 
  <div class="card-body p-0">
               <div class="text-center mt-3">
-                <p class="fw-bold m-0"><?php the_title(); ?></p>
-                <p class="text-secondary m-0"><?php the_content(); ?></p>
+              
+                <a href="<?php echo get_the_permalink(); ?>">
+                    <p  class="fw-bold m-0"><?php the_title(); ?></p>
+                    <p class="text-secondary m-0"><?php the_content(); ?></p>
+                </a>    
               </div>
             </div>
 
           <div class="team-member position-relative card rounded-4 border-0 shadow-sm p-3">
           <?php if ( has_post_thumbnail() ): ?>
             <div class="image-holder zoom-effect rounded-3">
-                <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-3', 'title' => 'Feature image']); ?>
+            <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-3', 'title' => 'Feature image']); ?></a>
               <ul class="social-links list-unstyled position-absolute">
                 <li>
                   <a href="#">

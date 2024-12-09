@@ -36,7 +36,7 @@ $subscribers_count = get_post_meta( get_the_ID(), 'subscribers', true );
 					?>
                 </div>
                                 <a href="#" id="subject-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="subscribe btn btn-primary px-5 py-3 mt-4">Subscribe now!</a>
-                  <p><?php echo $subscribers_count ?> Subscribers </p>
+                  <p><?php echo $subscribers_count; ?> Subscriber/s </p>
               
            </div>
         </div>

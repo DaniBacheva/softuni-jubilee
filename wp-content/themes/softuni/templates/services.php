@@ -16,11 +16,6 @@
 <?php softuni_display_teachers(); ?>
 
 
-<!-- <?php
-	get_template_part( 'partials/teacher', 'section' );
-?> -->
-
-
 <?php
 	get_template_part( 'partials/points', 'section' );
 ?>
