@@ -3,7 +3,8 @@
 <section id="about" class="padding-medium mt-xl-5">
     <div class="container">
         <div class="row align-items-center mt-xl-5">
-      
+
+        <?php while ( have_posts() ) : the_post(); ?>      
             <?php if ( has_post_thumbnail() ): ?>
                 <div class="offset-md-1 col-md-10">
                     <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded-circle', 'title' => 'Feature image']); ?>
@@ -21,6 +22,7 @@
                 <?php the_content(); ?>
             </div>
 
+        <?php endwhile;	?>
         </div>
     </div>
 </section>
