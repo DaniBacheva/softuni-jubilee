@@ -42,14 +42,7 @@ function softuni_plugin_settings_init() {
     );
 
 
-    // Add a promo checkbox field
-    add_settings_field(
-        'promo_plugin_checkbox_field', // Field ID
-        __( 'Show promo offer', 'softuni' ), // Label for the checkbox
-        'promo_plugin_checkbox_field_callback', // Callback function for rendering the checkbox
-        'softuni_jubilee_options', // Page where the checkbox will be displayed
-        'jubilee_plugin_main_section' // Section where the checkbox belongs
-    );
+
 }
 
 
@@ -72,7 +65,7 @@ function softuni_plugin_text_field_callback() {
     $value   = isset( $options['softuni_plugin_text_field'] ) ? esc_attr( $options['softuni_plugin_text_field'] ) : '';
     ?>
     <input type="text" name="softuni_jubilee_options[softuni_plugin_text_field]" value="<?php echo $value; ?>" />
-    <p class="description"><?php esc_html_e( 'Set a number of posts per page for the course page.', 'softuni' ); ?></p>
+    <p class="description"><?php esc_html_e( 'Set a number of posts per page for the archive page.', 'softuni' ); ?></p>
     <?php
 }
 
@@ -95,22 +88,6 @@ function jubilee_plugin_checkbox_field_callback() {
 add_action( 'admin_menu', 'jubilee_plugin_add_options_page' );
 
 
-/**
- * Callback function for rendering the promo checkbox field.
- */
-
- function promo_plugin_checkbox_field_callback() {
-
-    // Retrieve the existing value from the database
-    $options = get_option( 'softuni_jubilee_options' );
-    $checked = isset( $options['promo_plugin_checkbox_field'] ) && $options['promo_plugin_checkbox_field'] ? 'checked' : '';
-    ?>
-    <input type="checkbox" name="softuni_promo_options[promo_plugin_checkbox_field]" value="1" <?php echo $checked; ?> />
-    <p class="description"><?php esc_html_e( 'Check to enable the feature.', 'softuni' ); ?></p>
-    <?php
-}
-// Hook to add the options page to the admin menu
-add_action( 'admin_menu', 'jubilee_plugin_add_options_page' );
 
 
 /**
@@ -140,10 +117,13 @@ function softuni_jubilee_options_page_callback() {
             <?php
             $softuni_options = get_option( 'softuni_jubilee_options' );
             //var_dump( $softuni_options );
+
             // Output nonce, action, and option page fields for the settings page
             settings_fields( 'softuni_jubilee_options_group' );
+
             // Output settings sections and fields
             do_settings_sections( 'softuni_jubilee_options' );
+
             // Output the save settings button
             submit_button( __( 'Update Settings', 'softuni' ) );
             ?>

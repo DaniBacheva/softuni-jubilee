@@ -5,6 +5,7 @@
  * This is the assets function where we'll enqueue our scripts and styles
  *
  */
+
 function softuni_plugin_enqueue_assets() {
 	wp_enqueue_script(
         'ajax-script',
@@ -84,3 +85,33 @@ function display_subject_title( $atts ) {
 }
 
 add_shortcode( 'display_subject_title', 'display_subject_title' );
+
+
+/**
+ * A custom function that filter our custom author archive
+ *
+ * @return void
+ */
+function softuni_theme_author_archive_query( $query ) {
+    $softuni_options = get_option ( 'softuni_jubilee_options' );
+   
+      if ( ! is_admin() && $query->is_main_query() && is_author() ) {
+ 
+        //var_dump( $softuni_options );
+
+        if ( ! empty( $softuni_options['softuni_plugin_text_field'] ) ) {
+            $query->set( 'posts_per_page', esc_attr( $softuni_options['softuni_plugin_text_field'] ) );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'softuni_theme_author_archive_query' );
+
+
+
+
+  function content_filter($content)
+  {
+       return substr($content, 0, 200);
+  }
+
+  add_filter("the_content", "content_filter");
