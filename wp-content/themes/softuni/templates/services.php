@@ -4,26 +4,19 @@
  */
 ?>
 
+<?php
+$register_fields = get_fields( get_the_ID() );
+//var_dump( $register_fields);
+?>
 
 <?php get_header(); ?>
 
-<?php
-	get_template_part( 'partials/about', 'section' );
-?>
+<?php softuni_display_teachers(); ?>
 
 <?php softuni_display_reviews(); ?> 
 
-<?php softuni_display_teachers(); ?>
-
-
 <?php
-	get_template_part( 'partials/points', 'section' );
+	get_template_part( 'partials/contact', 'section', $register_fields);
 ?>
 
-
-<?php
-	get_template_part( 'partials/contact', 'section' );
-?>
-
-
-  <?php get_footer(); ?>
+<?php get_footer(); ?>

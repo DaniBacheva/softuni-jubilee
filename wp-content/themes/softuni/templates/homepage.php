@@ -32,10 +32,4 @@ $about_us_fields = get_fields( get_the_ID() );
 	get_template_part( 'partials/points', 'section' );
 ?>
 
-
-<?php
-	get_template_part( 'partials/contact', 'section' );
-?>
-
-
 <?php get_footer(); ?>
