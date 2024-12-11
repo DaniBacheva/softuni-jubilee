@@ -1,13 +1,12 @@
 <?php 
 
 $subjects_args = array(
-    'post_type'       => 'subject',
-    'post_status'     => 'publish',
+    'post_type'        => 'subject',
+    'post_status'      => 'publish',
     'posts_per_page'   => $number_of_cpt,
-);
+   );
 
 $subjects_query = new WP_Query ( $subjects_args );
-//var_dump( $subjects_query )
 ?>
 
 <?php if ( $subjects_query-> have_posts() ) : ?>
@@ -21,12 +20,12 @@ $subjects_query = new WP_Query ( $subjects_args );
 
       <?php while ( $subjects_query->have_posts() ) : $subjects_query->the_post(); ?>
 
-        <div class="col-sm-6 col-lg-4 col-xl-3 mb-5">
+        <div class="col-sm-6 col-lg-4 col-xl-3 mb-4">
           <div class="z-1 position-absolute m-4">
             <span class="badge text-white bg-secondary">New</span>
           </div>
           <div class="card rounded-4 border-0 shadow-sm p-3 position-relative">
-          <p class="text-black-50 fw-bold text-uppercase m-0"><?php get_the_category(); ?></p>
+          
 
           <?php if ( has_post_thumbnail() ): ?>
                              <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', [ 'class' => 'img-fluid rounded-3', 'title' => 'Feature image'] ); ?>   
@@ -58,6 +57,10 @@ $subjects_query = new WP_Query ( $subjects_args );
                   <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
                   <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
                 </span>
+                
+             
+               
+
               </div>
 
             </div>

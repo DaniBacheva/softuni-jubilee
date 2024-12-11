@@ -44,6 +44,7 @@
                         </a>
 
                         <div class="card-text">
+
                             <span class="rating d-flex align-items-center mt-3">
                             <p class="text-muted fw-semibold m-0 me-2">By: <?php echo get_the_author(); ?></p>
                             <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
@@ -52,8 +53,11 @@
                             <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
                             <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
                             </span>
-                        </div>
 
+
+                        </div>
+                        <div class="card-text">
+                                  </div>
                         </div>
                     </div>
 

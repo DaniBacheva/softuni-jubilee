@@ -3,6 +3,10 @@
 <?php
 $subject_hours = get_post_meta( get_the_ID(), 'subject_hours', true );
 $subscribers_count = get_post_meta( get_the_ID(), 'subscribers', true );
+$terms = get_the_terms( get_the_ID(), 'subject-category' );
+
+//var_dump( $terms );
+
 ?>
 
 <section id="about" class="padding-medium mt-xl-5">
@@ -22,11 +26,20 @@ $subscribers_count = get_post_meta( get_the_ID(), 'subscribers', true );
             </div>
            <?php endif; ?>        
          <div class="col-md-10 mt-5 mt-md-0">
-         
+
               <?php the_content(); ?>
 
               <div class="mb-3">
-                    
+
+                <?php
+                foreach ( $terms as $term) {
+                    ?>
+                     <a href="<?php echo esc_url ( get_the_excerpt( $term ) ); ?>">Category: <?php echo esc_attr ( $term->name ); ?></p>
+                     <?php
+                }         
+
+            ?>
+                             
               <?php 					
 					if ( ! empty( $subject_hours ) ) {
 						echo '<div>';

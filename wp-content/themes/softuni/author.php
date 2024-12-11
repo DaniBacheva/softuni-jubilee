@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php
+// Use a custom query or use pre_get_posts
+?>
+
   <section id="courses" class="padding-medium">
     <div class="container">
           <?php if( have_posts() ) : ?>
@@ -41,6 +45,7 @@
 
                         <a href="<?php echo get_the_permalink(); ?>">
                             <h5 class="course-title py-2 m-0"><?php echo get_the_excerpt(); ?></h5>
+                            <p class="text-secondary ">Category: <?php the_category(); ?></p>
                         </a>
 
                         <div class="card-text">
@@ -75,7 +80,7 @@
         ?>
 
       <div class="text-center mt-4">
-        <a href="http://localhost/softuni/category/courses/" class="btn btn-primary px-5 py-3">View all courses</a>
+        <a href="http://localhost/softuni/courses/" class="btn btn-primary px-5 py-3">View all courses</a>
       </div>
 
     </div>
