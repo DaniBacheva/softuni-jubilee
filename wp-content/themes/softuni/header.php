@@ -230,95 +230,6 @@
 			wp_nav_menu( $nav_menu_args );
 			?>
 
-          <!-- <ul class="navbar-nav menu-list list-unstyled align-items-lg-center d-flex gap-md-3 mb-0">
-            <li class="nav-item">
-              <a href="<?php echo get_home_url( '/' ); ?>" class="nav-link mx-2 active">Home</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle align-items-center" role="button" id="pages"
-                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-              <ul class="dropdown-menu" aria-labelledby="pages">
-                <li><a href="about.html" class="dropdown-item">About Us<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="instructors.html" class="dropdown-item">Instructors<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="cart.html" class="dropdown-item">Cart<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="wishlist.html" class="dropdown-item">Wishlist<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="checkout.html" class="dropdown-item">Checkout<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="price-plan.html" class="dropdown-item">Price Plan<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="contact.html" class="dropdown-item">Contact<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="faqs.html" class="dropdown-item">FAQs<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="account.html" class="dropdown-item">Account<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="thank-you.html" class="dropdown-item">Thankyou<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="error.html" class="dropdown-item">Error 404<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="styles.html" class="dropdown-item">Styles<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle align-items-center" role="button" id="courses"
-                data-bs-toggle="dropdown" aria-expanded="false">Courses</a>
-              <ul class="dropdown-menu" aria-labelledby="courses">
-                <li><a href="courses.html" class="dropdown-item">Course<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="courses-details.html" class="dropdown-item">Courses Detail<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle align-items-center" role="button" id="events"
-                data-bs-toggle="dropdown" aria-expanded="false">events</a>
-              <ul class="dropdown-menu" aria-labelledby="courses">
-                <li><a href="event.html" class="dropdown-item">event<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="event-details.html" class="dropdown-item">event details<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle align-items-center" role="button" id="blog"
-                data-bs-toggle="dropdown" aria-expanded="false">blog</a>
-              <ul class="dropdown-menu" aria-labelledby="blog">
-                <li><a href="blog.html" class="dropdown-item">blog<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="single-post.html" class="dropdown-item">single post<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle align-items-center" role="button" id="shop"
-                data-bs-toggle="dropdown" aria-expanded="false">shop</a>
-              <ul class="dropdown-menu" aria-labelledby="shop">
-                <li><a href="shop.html" class="dropdown-item">Shop<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-                <li><a href="single-product.html" class="dropdown-item">Single Product<span
-                      class="badge bg-secondary text-white ms-2">PRO</span></a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a href="contact.html" class="nav-link mx-2">contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://templatesjungle.gumroad.com/l/jubilee-free-bootstrap-5-html-website-template-for-online-course"
-                class="nav-link mx-2 text-decoration-underline" target="_blank">GET PRO</a>
-            </li>
-          </ul> -->
-
           <div class="d-none d-lg-flex align-items-center">
             <ul class="d-flex  align-items-center list-unstyled m-0">
               <li>
@@ -402,74 +313,75 @@
 
 
   <?php if ( is_front_page() ) : ?>
-  <section id="hero" style="background-image:url(images/billboard-bg.png); background-repeat: no-repeat; ">
+    <section id="hero" style="background-image:url(images/billboard-bg.png); background-repeat: no-repeat; ">
 
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 pe-5 mt-5 mt-md-0">
-          <h2 class="display-1 text-uppercase">Master Your Skills Online</h2>
-          <p class="fs-4 my-4 pb-2">Online Courses Taught by Industry Titans!</p>
-          <div>
-            <form id="form" class="d-flex align-items-center position-relative ">
-              <input type="text" name="email" placeholder="what are you trying to learn?"
-                class="form-control bg-white border-0 rounded-4 shadow-none px-4 py-3 w-100">
-              <button class="btn btn-primary rounded-4 px-3 py-2 position-absolute align-items-center m-1 end-0"><svg
-                  xmlns="http://www.w3.org/2000/svg" width="22px" height="22px">
-                  <use href="#search" />
-                </svg></button>
-            </form>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 pe-5 mt-5 mt-md-0">
+            <h2 class="display-1 text-uppercase">Master Your Skills Online</h2>
+            <p class="fs-4 my-4 pb-2">Online Courses Taught by Industry Titans!</p>
+            <div>
+              <form id="form" class="d-flex align-items-center position-relative ">
+                <input type="text" name="email" placeholder="what are you trying to learn?"
+                  class="form-control bg-white border-0 rounded-4 shadow-none px-4 py-3 w-100">
+                <button class="btn btn-primary rounded-4 px-3 py-2 position-absolute align-items-center m-1 end-0"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="22px" height="22px">
+                    <use href="#search" />
+                  </svg></button>
+              </form>
 
+            </div>
+          </div>
+          <div class="col-md-6 mt-5">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/billboard-img.jpg" alt="img" class="img-fluid">
           </div>
         </div>
-        <div class="col-md-6 mt-5">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/billboard-img.jpg" alt="img" class="img-fluid">
-        </div>
       </div>
-    </div>
+    
+    </section>
   
-  </section>
- 
-  <section id="features">
-    <div class="feature-box container">
-      <div class="row ">
-        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
-          <div class="feature-item py-5  rounded-4">
-            <div class="feature-detail text-center">
-              <h2 class="feature-title">100+</h2>
-              <h6 class="feature-info text-uppercase">instructors</h6>
+    <section id="features">
+      <div class="feature-box container">
+        <div class="row ">
+          <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+            <div class="feature-item py-5  rounded-4">
+              <div class="feature-detail text-center">
+                <h2 class="feature-title">100+</h2>
+                <h6 class="feature-info text-uppercase">instructors</h6>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
-          <div class="feature-item py-5  rounded-4">
-            <div class="feature-detail text-center">
-              <h2 class="feature-title">500+</h2>
-              <h6 class="feature-info text-uppercase">courses</h6>
+          <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+            <div class="feature-item py-5  rounded-4">
+              <div class="feature-detail text-center">
+                <h2 class="feature-title">500+</h2>
+                <h6 class="feature-info text-uppercase">courses</h6>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
-          <div class="feature-item py-5  rounded-4">
-            <div class="feature-detail text-center">
-              <h2 class="feature-title">free</h2>
-              <h6 class="feature-info text-uppercase">certifications</h6>
+          <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+            <div class="feature-item py-5  rounded-4">
+              <div class="feature-detail text-center">
+                <h2 class="feature-title">free</h2>
+                <h6 class="feature-info text-uppercase">certifications</h6>
 
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
-          <div class="feature-item py-5  rounded-4">
-            <div class="feature-detail text-center">
-              <h2 class="feature-title">2,000+</h2>
-              <h6 class="feature-info text-uppercase">happy members</h6>
+          <div class="col-md-3 col-sm-6 mb-5 mb-md-0">
+            <div class="feature-item py-5  rounded-4">
+              <div class="feature-detail text-center">
+                <h2 class="feature-title">2,000+</h2>
+                <h6 class="feature-info text-uppercase">happy members</h6>
 
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
   <?php endif; ?>

@@ -1,7 +1,9 @@
 <?php
+
 /**
  * Generated Options Page
  */
+
 // Hook to initialize the settings
 add_action( 'admin_init', 'softuni_plugin_settings_init' );
 
@@ -40,9 +42,6 @@ function softuni_plugin_settings_init() {
         'softuni_jubilee_options', // Page where the checkbox will be displayed
         'jubilee_plugin_main_section' // Section where the checkbox belongs
     );
-
-
-
 }
 
 
@@ -84,10 +83,9 @@ function jubilee_plugin_checkbox_field_callback() {
     <p class="description"><?php esc_html_e( 'Check to enable the feature.', 'softuni' ); ?></p>
     <?php
 }
+
 // Hook to add the options page to the admin menu
 add_action( 'admin_menu', 'jubilee_plugin_add_options_page' );
-
-
 
 
 /**
@@ -97,7 +95,7 @@ add_action( 'admin_menu', 'jubilee_plugin_add_options_page' );
 function jubilee_plugin_add_options_page() {
     add_options_page(
         __( 'SoftUni Options', 'softuni' ), // Page title
-        __( 'SoftUni Options', 'softuni' ), // Menu title
+        __( 'Jubilee Options', 'softuni' ), // Menu title
         'manage_options', // Capability required to access the page
         'softuni-jubilee-options', // Menu slug
         'softuni_jubilee_options_page_callback' // Callback function to render the page

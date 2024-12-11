@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Register a custom post type called "subject".
  *
@@ -31,6 +32,7 @@ function softuni_register_subject_cpt() {
 		'items_list_navigation' => _x( 'Subjects list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'softuni' ),
 		'items_list'            => _x( 'Subjects list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'softuni' ),
 	);
+
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
@@ -46,8 +48,10 @@ function softuni_register_subject_cpt() {
         'show_in_rest'       => true,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
 	);
+
 	register_post_type( 'subject', $args );
 }
+
 add_action( 'init', 'softuni_register_subject_cpt' );
 
 
@@ -71,6 +75,7 @@ function softuni_register_subject_category_taxonomy() {
 		'new_item_name'     => __( 'New Category Name', 'softuni' ),
 		'menu_name'         => __( 'Category', 'softuni' ),
 	);
+
 	$args = array(
 		'hierarchical'      => true,
 		'labels'            => $labels,
@@ -80,8 +85,10 @@ function softuni_register_subject_category_taxonomy() {
         'show_in_rest'      => true,
 		'rewrite'           => array( 'slug' => 'category' ),
 	);
+
     register_taxonomy( 'subject-category', 'subject', $args );
 }
+
 add_action( 'init', 'softuni_register_subject_category_taxonomy' );
 
 
@@ -92,12 +99,14 @@ add_action( 'init', 'softuni_register_subject_category_taxonomy' );
 * Data Saving: The save_post action saves the text entered in the metabox when the post is saved.
 * Gutenberg Compatibility: Registering the meta field with show_in_rest => true makes it accessible in the REST API, which is useful for integrating with the block editor.
 * This setup ensures that your metabox is compatible with both the Classic Editor and Gutenberg. Let me know if you'd like to expand this with specific Gutenberg integrations or additional fields! 
- */
+
+*/
  /**
  * Subject Metabox main function where we'll register metaboxes
  *
  * @return void
  */
+
 function subject_details_metabox() {
     add_meta_box(
         'subject_details_metabox_id',       	// Unique ID for the metabox
@@ -114,11 +123,13 @@ function subject_details_metabox() {
 }
 add_action( 'add_meta_boxes', 'subject_details_metabox' );
 
+
 /**
  * Shows the mark up of the metabox field
  */
 
 function subject_details_metabox_callback( $post ) {
+	
     // Add a nonce field for security
     wp_nonce_field( 'subject_details_metabox_nonce_action', 'subject_details_metabox_nonce' );
     $subject_hours = get_post_meta( $post->ID, 'subject_hours', true );

@@ -16,9 +16,8 @@ if ( ! defined( 'SOFTUNI_PLUGIN_ASSETS_URL' ) ) {
     define( 'SOFTUNI_PLUGIN_ASSETS_URL',  plugin_dir_url( __FILE__ ) . 'assets' );
 }
 
- require 'includes/cpt-subject.php';
- require 'includes/cpt-review.php';
- 
- require 'includes/options-page.php';
- require 'includes/functions.php';
+require 'includes/cpt-subject.php';
+require 'includes/cpt-review.php';
+require 'includes/options-page.php';
+require 'includes/functions.php';
 

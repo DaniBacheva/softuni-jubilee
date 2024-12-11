@@ -19,6 +19,7 @@ function softuni_plugin_enqueue_assets() {
         array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
     );
 }
+
 add_action( 'wp_enqueue_scripts', 'softuni_plugin_enqueue_assets' );
 
 
@@ -40,6 +41,7 @@ function softuni_subject_subscribe() {
     update_post_meta( $id, 'subscribers', $subscribers_count + 1 );
     var_dump( $subscribers_count );
 }
+
 add_action( 'wp_ajax_nopriv_softuni_subject_subscribe', 'softuni_subject_subscribe' );
 add_action( 'wp_ajax_softuni_subject_subscribe', 'softuni_subject_subscribe' );
 
@@ -47,7 +49,7 @@ add_action( 'wp_ajax_softuni_subject_subscribe', 'softuni_subject_subscribe' );
 
 
 /**  
-* This is a callback function to display the subject title with shortcut
+* This is a callback function to display the promo offer for subject with shortcut
 *
 * @return void
 */
@@ -95,7 +97,7 @@ add_shortcode( 'display_subject_title', 'display_subject_title' );
 function softuni_theme_author_archive_query( $query ) {
     $softuni_options = get_option ( 'softuni_jubilee_options' );
    
-      if ( ! is_admin() && $query->is_main_query() && is_author() ) {
+    if ( ! is_admin() && $query->is_main_query() && is_author() ) {
  
         //var_dump( $softuni_options );
 
@@ -104,14 +106,21 @@ function softuni_theme_author_archive_query( $query ) {
         }
     }
 }
+
 add_action( 'pre_get_posts', 'softuni_theme_author_archive_query' );
 
 
+/**
+ * A custom function that filter blog post content
+ *
+ * @return void
+ */
 
 
-  function content_filter($content)
-  {
+function content_filter( $content ) {
+
        return substr($content, 0, 200);
-  }
 
-  add_filter("the_content", "content_filter");
+}
+
+add_filter("the_content", "content_filter");

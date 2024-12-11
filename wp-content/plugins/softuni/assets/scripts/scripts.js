@@ -1,7 +1,8 @@
 jQuery(document).ready(function($) {
     $('.subscribe').on('click', function(e){
         e.preventDefault();
-        let subject_id = jQuery(this).attr('data-id'); // we'll need this later
+
+        let subject_id = jQuery(this).attr('data-id'); 
         jQuery.ajax({
             type: 'post',
             dataType: 'json',

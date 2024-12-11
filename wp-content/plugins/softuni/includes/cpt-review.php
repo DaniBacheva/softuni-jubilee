@@ -59,9 +59,9 @@ if ( ! class_exists( 'Softuni_Reviews' ) ) :
 			);
 
 			register_post_type( 'review', $args );		
-	}
+		}
 
-}
+	}
 
 endif;
 

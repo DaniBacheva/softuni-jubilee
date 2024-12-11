@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Register a custom post type called "teacher".
  *
@@ -31,6 +32,7 @@ function softuni_register_teacher_cpt() {
 		'items_list_navigation' => _x( 'Teachers list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'softuni' ),
 		'items_list'            => _x( 'Teachers list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'softuni' ),
 	);
+
 	$args = array(
 		'labels'             => $labels,
 		'public'             => true,
@@ -46,6 +48,8 @@ function softuni_register_teacher_cpt() {
         'show_in_rest'       => true,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
 	);
+
 	register_post_type( 'teacher', $args );
 }
+
 add_action( 'init', 'softuni_register_teacher_cpt' );
