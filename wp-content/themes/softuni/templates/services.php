@@ -16,6 +16,10 @@ $register_fields = get_fields( get_the_ID() );
 <?php softuni_display_reviews(); ?> 
 
 <?php
+	get_template_part( 'partials/points', 'section', $register_fields);
+?>
+
+<?php
 	get_template_part( 'partials/contact', 'section', $register_fields);
 ?>
 
